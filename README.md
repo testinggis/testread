@@ -27,10 +27,11 @@ The things you need first (Housekeeping)
 	pip install -r requirements.txt
 	```
 *for windows download the zip and after extraction go to the folder containing "setup.py" and open command prompt at that location and type
-	```
+```
 	python setup.py install
 	pip install -r requirements.txt
-	```
+```
+
 You can use the tool without any installation by typing python ppipe.py
 		
 For the rest of the tutorial I will be working on a windows system because this is the most common operating system I use within my lab and in the university setting of which I am currently a part. If you have installed everything and your dependencies are met you should be able to type ppipe-h in command prompt and you should be able to get the following readout. Since I have designed the tool to be powerful addon tools to earth engine as well I will only deal with the ones responsible for processing and uploading Planet assets but feel free to explore the other tools included in the toolset
@@ -42,7 +43,8 @@ The tool is designed to save your API key so that you don't have to do this agai
 
 With everything set up lets get started, You only need to provide your planetkey one since it is saved for future use.
 aoijson-Is a powerful tool, as it allows you to bring any existing KML, Zipped Shapefile, GeoJSON, WKT or even Landsat Tiles to a structured geojson file, this is so that the Planet API can read the structured geojson which has additional filters such as cloud cover and range of dates. The tool allows you to bring your own area of interest geospatial file or create one. Incase you are interested in creating a initial area of interest file you can simply go to geojson.io and once you have defined your area of interest click on save as GeoJson(A map.geojson file is created). For the ease of use I am choosing and working on an area within Californias since this is convered under the Open California license and should be easily accesible to anyone
-![GeoJSON](http://i.imgur.com/vmBGedl.gif)
+
+![GEO](http://i.imgur.com/vmBGedl.gif)
 
 The tool can then allow you to convert the geojson file to include filters to be used with the Planet Data API.
 
@@ -55,6 +57,7 @@ I am providing the [map.geojson](https://filebin.ca/3S3EeDlgNzmj/map.geojson) an
 The data API activates assets only when requested by a user rather than keeping all assets activated all the time. So for the area of interest we created the next tool we use is the activatepl tool which allows you to activate or check the activation status of the assets within our area of interest. You can request activation for any planet asset and for now I am interested in just PSOrthoTile analytic.
 
 The setup for asset activation for aoi.json will be
+
 ```
 ppipe activatepl --aoi "local path where you create aoi.json file " --action activate --asst "PSOrthoTile analytic"
 ```
@@ -62,28 +65,30 @@ ppipe activatepl --aoi "local path where you create aoi.json file " --action act
 ![activate](http://i.imgur.com/glkDz4K.png)
 
 You can then periodically check the progress on activation
+
 ```
 ppipe activatepl --aoi "local path where you create aoi.json file " --action check --asst "PSOrthoTile analytic"
 ```
+
 ![activating](http://i.imgur.com/KO8yTq8.png)
 
 ![activated](http://i.imgur.com/jIajFfE.png)
 
 The next step pertaining to the Data API is to download the assets
-http://i.imgur.com/KItCGPK.png
+![downloader](http://i.imgur.com/KItCGPK.png)
 
 Download the metadata
-http://i.imgur.com/zgZYmEy.png
+![downmeta](http://i.imgur.com/zgZYmEy.png)
 
 Parse the metadata
-http://i.imgur.com/WUvFZNU.gif
+![parse](http://i.imgur.com/WUvFZNU.gif)
 
 Upload the Files to Earth Engine
-http://i.imgur.com/hkykXOo.gif
+![ee](http://i.imgur.com/hkykXOo.gif)
  
  
 Futture projects and plans
-http://i.imgur.com/VaDrNTH.gif
+![auto](http://i.imgur.com/VaDrNTH.gif)
 
 
 From the readme file the instructions included
