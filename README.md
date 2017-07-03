@@ -50,6 +50,7 @@ The tool can then allow you to convert the geojson file to include filters to be
 
 Let us say we want to convert this map.geojson to a structured aoi.json from June 1 2017 to June 30th 2017 with 15% cloud cover as our maximum. We would pass the following command
 ppipe.py aoijson --start "2017-06-01" --end "2017-06-30" --cloud "0.15" --inputfile "GJSON"  --geo "local path to map.geojson file" --loc "path where aoi.json output file will be created"
+
 ![aoijson](http://i.imgur.com/5Pr0iqp.png)
 
 I am providing the [map.geojson](https://filebin.ca/3S3EeDlgNzmj/map.geojson) and the [aoi.json](https://filebin.ca/3S3CzV90x72d/aoi.json) file so that you can compare th file structures and can replicate the same process. It is a great idea to go into the planet explorer first and toggle your available area, that way you can be sure that you have access to the area you are trying to download.
@@ -75,19 +76,24 @@ ppipe activatepl --aoi "local path where you create aoi.json file " --action che
 ![activated](http://i.imgur.com/jIajFfE.png)
 
 The next step pertaining to the Data API is to download the assets
+
 ![downloader](http://i.imgur.com/KItCGPK.png)
 
 Download the metadata
+
 ![downmeta](http://i.imgur.com/zgZYmEy.png)
 
 Parse the metadata
+
 ![parse](http://i.imgur.com/WUvFZNU.gif)
 
 Upload the Files to Earth Engine
+
 ![ee](http://i.imgur.com/hkykXOo.gif)
  
  
-Futture projects and plans
+Future projects and plans
+
 ![auto](http://i.imgur.com/VaDrNTH.gif)
 
 
